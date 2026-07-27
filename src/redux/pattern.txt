@@ -1,0 +1,112 @@
+const initialState = {
+  id: null,
+
+  status: "NOT_STARTED", // NOT_STARTED | LIVE | COMPLETED
+
+  overs: 20,
+  venue: null,
+
+  toss: {
+    winnerTeam: null,
+    decision: null,
+  },
+
+  winner: null,
+
+  teams: [
+    {
+      teamName: "",  
+      totalPlayers: 11,
+
+      players: [
+        {
+          playerName: "",
+          battingOrder: 1,
+
+          isOut: false,
+
+          batting: {
+            runs: 0,
+            balls: 0,
+            fours: 0,
+            sixes: 0,
+            strikeRate: 0,
+          },
+
+          bowling: {
+            overs: 0,
+            balls: 0,
+            maidens: 0,
+            runs: 0,
+            wickets: 0,
+            wides: 0,
+            noBalls: 0,
+            economy: 0,
+          },
+        },
+      ],
+    },
+  ],
+
+  innings: [
+    {
+      battingTeam: "",
+      bowlingTeam: "",
+
+      striker: "",
+      nonStriker: "",
+      currentBowler: "",
+
+      isCompleted: false,
+
+      score: {
+        runs: 0,
+        wickets: 0,
+
+        overs: 0,
+        balls: 0,
+
+        runRate: 0,
+        requiredRunRate: 0,
+
+        extras: {
+          wides: 0,
+          noBalls: 0,
+          byes: 0,
+          legByes: 0,
+          total: 0,
+        },
+      },
+
+      balls: [
+        {
+          over: 0,
+          ball: 1,
+
+          batsman: "",
+          bowler: "",
+
+          striker: "",
+          nonStriker: "",
+
+          legalBall: true,
+
+          batRuns: 0,
+
+          extra: {
+            type: null, // wide | noBall | bye | legBye
+            runs: 0,
+          },
+
+          totalRuns: 0,
+
+          wicket: {
+            isWicket: false,
+            type: null,
+            playerOut: null,
+          },
+        },
+      ],
+    },
+  ],
+};

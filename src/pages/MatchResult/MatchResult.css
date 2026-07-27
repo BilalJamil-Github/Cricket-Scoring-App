@@ -1,0 +1,44 @@
+.result-card {
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.5s ease;
+}
+
+.result-card h1 {
+  margin-bottom: 25px;
+  color: #0f172a;
+  font-size: 2rem;
+}
+
+.result-card h2 {
+  color: #16a34a;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.result-card p {
+  font-size: 1.2rem;
+  color: #374151;
+  margin-bottom: 15px;
+}
+
+.result-card strong {
+  color: #111827;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,75 @@
+#live_Score {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
+  padding: 4px 2px;
+  overflow-x: auto;
+}
+
+.each_score {
+  width: 70px;
+  height: 70px;
+  min-width: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto Mono", ui-monospace, monospace;
+  font-weight: 700;
+  font-size: 17px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  transition: transform 0.15s ease;
+}
+
+#main {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.over-heading {
+  font-weight: 800;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.dotball {
+  background: linear-gradient(155deg, #1b3a2e, #16302a);
+  color: #7fa98a;
+}
+
+.runball {
+  background: linear-gradient(155deg, #25493b, #1c3a2f);
+  color: #f5f0e6;
+}
+
+.fourball {
+  background: linear-gradient(155deg, #2f7dd1, #1f5fa8);
+  color: #ffffff;
+}
+
+.sixball {
+  background: linear-gradient(155deg, #e8b84b, #c9902a);
+  color: #241a04;
+}
+
+.wicketball {
+  background: linear-gradient(155deg, #d6353f, #a3242c);
+  color: #ffffff;
+}
+
+.wideball {
+  background: linear-gradient(155deg, #2c8c8c, #1f6666);
+  color: #ffffff;
+}
+
+.noball {
+  background: linear-gradient(155deg, #2c8c8c, #1f6666);
+  color: #ffffff;
+}
+
+.byeball,
+.legbyeball {
+  background: linear-gradient(155deg, #3b5a4c, #2c4638);
+  color: #cfe3d6;
+}
