@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { addBallHistory } from "./Helpers/AddBallHistroy.js";
-import { ChangeBallandOver } from "./Helpers/ChangeballandOver.js";
+import { ChangeBallandOver } from "./Helpers/ChangeBallandOver.js";
 import { current } from "@reduxjs/toolkit";
 import { eachPlayerScore } from "./Helpers/eachPlayerScore.js";
 import { isInningEnd } from "./Helpers/isInningEnd.js";
