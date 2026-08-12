@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@500;700&display=swap");
+
+/* ============================================================
+   CricScore — global design tokens
+   ============================================================ */
+:root {
+  --font-display: "Space Grotesk", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --font-mono: "Roboto Mono", ui-monospace, monospace;
+
+  --clr-navy: #0f172a;
+  --clr-navy-2: #1e3a8a;
+  --clr-surface: #ffffff;
+  --clr-bg: #eef2f8;
+  --clr-bg-alt: #f5f7fb;
+  --clr-border: #e2e8f0;
+  --clr-text: #1e293b;
+  --clr-muted: #64748b;
+
+  --clr-green: #16a34a;
+  --clr-green-dark: #15803d;
+  --clr-green-light: #22c55e;
+  --clr-amber: #f59e0b;
+  --clr-amber-dark: #d97706;
+  --clr-blue: #2563eb;
+  --clr-blue-dark: #1d4ed8;
+  --clr-red: #dc2626;
+  --clr-red-dark: #b91c1c;
+
+  --clr-accent: #4f46e5;
+  --clr-accent-dark: #4338ca;
+  --clr-accent-light: #eef2ff;
+  --clr-ink: #0f172a;
+  --clr-slate-800: #1e293b;
+  --clr-slate-700: #334155;
+  --clr-slate-600: #475569;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+
+  --shadow-sm: 0 4px 12px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 18px 45px rgba(15, 23, 42, 0.14);
+
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+select,
+input,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  touch-action: manipulation;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--clr-amber);
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+#root {
+  min-height: 100vh;
+}
