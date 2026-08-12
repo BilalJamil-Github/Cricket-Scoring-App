@@ -3,26 +3,30 @@
   max-width: 500px;
   background: #ffffff;
   border-radius: 18px;
-  padding: 40px 30px;
+  padding: clamp(26px, 6vw, 40px) clamp(18px, 5vw, 30px);
   text-align: center;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
   animation: fadeIn 0.5s ease;
+  margin: 0 auto;
 }
 
 .result-card h1 {
   margin-bottom: 25px;
   color: #0f172a;
-  font-size: 2rem;
+  font-family: var(--font-display, inherit);
+  font-size: clamp(1.4rem, 5vw, 2rem);
 }
 
 .result-card h2 {
   color: #16a34a;
-  font-size: 2rem;
+  font-family: var(--font-display, inherit);
+  font-size: clamp(1.3rem, 5vw, 2rem);
   margin-bottom: 20px;
+  word-break: break-word;
 }
 
 .result-card p {
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3.2vw, 1.2rem);
   color: #374151;
   margin-bottom: 15px;
 }
@@ -40,5 +44,12 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .result-card {
+    border-radius: 14px;
+    padding: 24px 16px;
   }
 }
