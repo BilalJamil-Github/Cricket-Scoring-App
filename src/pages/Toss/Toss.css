@@ -2,11 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Inter, sans-serif;
+  font-family: var(--font-body, Inter, sans-serif);
 }
 
 body {
-  background: #eef3ff;
+  background: var(--clr-bg, #eef3ff);
 }
 
 .toss-page {
@@ -15,59 +15,66 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 18px;
-  padding: 35px 15px;
+  gap: 16px;
+  padding: clamp(20px, 6vw, 35px) 15px;
 }
 
 /* ================= CARDS ================= */
 
 .toss-card {
-  width: 500px;
+  width: min(480px, 94vw);
   background: #ffffff;
-  padding: 22px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-  border: 2px solid #f2f2f2;
+  padding: clamp(18px, 5vw, 24px);
+  border-radius: 16px;
+  box-shadow: none;
+  border: 1px solid var(--clr-border, #e5e9f2);
 }
 
 .toss-card h1 {
-  font-size: 32px;
-  color: #2d3748;
+  font-family: var(--font-display, inherit);
+  font-weight: 600;
+  font-size: clamp(20px, 5.5vw, 28px);
+  color: var(--clr-ink, #1e293b);
 }
 
 .toss-card h2 {
-  color: #2d3748;
-  margin-bottom: 10px;
+  color: var(--clr-ink, #1e293b);
+  font-family: var(--font-display, inherit);
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: clamp(16px, 4.6vw, 20px);
 }
 
 .toss-card h4 {
-  color: #6b7280;
+  color: var(--clr-muted, #6b7280);
   font-weight: 500;
+  font-size: clamp(12.5px, 3vw, 14px);
 }
 
 .toss-card #heading {
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 /* ================= RESULT ================= */
 
 #toss-result {
-  width: 120px;
-  height: 60px;
-  margin: 16px auto;
-  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  width: 110px;
+  height: 52px;
+  margin: 14px auto;
+  background: var(--clr-ink, #0f172a);
   color: white;
-  border-radius: 14px;
+  border-radius: 10px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  box-shadow: 0 8px 18px rgba(46, 125, 50, 0.25);
+  box-shadow: none;
 }
 
 #toss-result h3 {
-  font-size: 26px;
+  font-family: var(--font-mono, inherit);
+  font-size: clamp(18px, 4.6vw, 22px);
   font-weight: 700;
 }
 
@@ -76,54 +83,56 @@ body {
 .toss-card .container {
   display: flex;
   width: 100%;
-  background: #f3f5fb;
-  border-radius: 50px;
-  padding: 5px;
+  background: var(--clr-bg-alt, #f3f5fb);
+  border-radius: 10px;
+  padding: 4px;
 }
 
 .toss-card .container span {
   flex: 1;
-  padding: 14px;
-  border-radius: 50px;
+  padding: clamp(9px, 2.8vw, 12px);
+  border-radius: 8px;
   text-align: center;
-  font-size: 17px;
+  font-size: clamp(13px, 3.4vw, 15px);
   font-weight: 600;
+  color: var(--clr-slate-600, #475569);
   cursor: pointer;
-  transition: 0.25s;
+  transition: 0.2s ease;
 }
 
 .selected {
-  background: linear-gradient(135deg, #ff7043, #ff5722);
+  background: var(--clr-accent, #4f46e5);
   color: white;
 }
 
 .selected_type {
-  background: linear-gradient(135deg, #00c853, #00a152);
+  background: var(--clr-ink, #0f172a);
   color: white;
 }
 
 #heading_lower {
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .flip-btn {
-  width: 500px;
-  height: 60px;
+  width: min(480px, 94vw);
+  height: 50px;
 
   border: none;
-  border-radius: 18px;
- background-color: #00a152;
+  border-radius: 12px;
+  background-color: var(--clr-accent, #4f46e5);
   color: white;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-size: clamp(15px, 3.6vw, 18px);
+  font-weight: 600;
+  letter-spacing: 0.3px;
 
   cursor: pointer;
-
+  box-shadow: none;
+  transition: background 0.2s ease, transform 0.15s ease;
 }
 
 .flip-btn:hover {
-  filter: brightness(1.08);
+  background-color: var(--clr-accent-dark, #4338ca);
 }
 
 .flip-btn:active {
@@ -131,17 +140,15 @@ body {
 }
 
 @media (max-width: 550px) {
-  .toss-card,
-  .flip-btn {
-    width: 95%;
-  }
-
-  .toss-card h1 {
-    font-size: 26px;
-  }
-
   .toss-card .container span {
-    font-size: 15px;
-    padding: 12px;
+    font-size: 13px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .toss-card {
+    padding: 14px;
+    border-radius: 12px;
   }
 }
