@@ -2,118 +2,140 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--font-body, "Segoe UI", sans-serif);
 }
 
 body {
-  background: #eef3f8;
+  background: var(--clr-bg, #eef3f8);
 }
 
 .teams-page {
   width: 92%;
   max-width: 1000px;
-  margin: 35px auto;
+  margin: clamp(20px, 5vw, 35px) auto;
 }
 
 .teams-page h1 {
   text-align: center;
-  color: #1e293b;
-  font-size: 36px;
-  margin-bottom: 35px;
+  color: var(--clr-ink, #0f172a);
+  font-family: var(--font-display, inherit);
+  font-weight: 600;
+  font-size: clamp(22px, 5.5vw, 32px);
+  margin-bottom: clamp(18px, 4.5vw, 30px);
 }
+
+/* ================= TEAM CARDS — always face to face ================= */
 
 #team-card-holder {
   display: flex;
-  gap: 20px;
+  flex-wrap: nowrap;
+  gap: clamp(8px, 2.5vw, 20px);
   justify-content: center;
-  margin-bottom: 20px;
+  align-items: stretch;
+  margin-bottom: 18px;
 }
 
 .team-card-upper,
 .team-card {
   background: #fff;
-  width: 100%;
-  border-radius: 16px;
-  padding: 20px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  flex: 1 1 0;
+  min-width: 0;
+  border-radius: 12px;
+  padding: clamp(10px, 3vw, 20px);
+  border: 1px solid var(--clr-border, #e2e8f0);
+  box-shadow: none;
+  transition: border-color 0.2s ease;
+}
+
+.team-card-upper:hover,
+.team-card:hover {
+  border-color: #cbd5e1;
 }
 
 .team-card-upper {
-  min-height: 120px;
+  min-height: 110px;
 }
 
 .team-card {
-  height: 330px;
+  height: 300px;
   overflow-y: auto;
 }
 
 .team-card h2,
 .team-card-upper h2 {
-  color: #2563eb;
-  font-size: 22px;
-  margin-bottom: 18px;
+  color: var(--clr-ink, #1e293b);
+  font-family: var(--font-display, inherit);
+  font-weight: 600;
+  font-size: clamp(14px, 3.6vw, 20px);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--clr-accent, #4f46e5);
+  display: inline-block;
 }
 
 .inner-team-card-holder {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .input,
 .input2 {
   width: 100%;
-  border: 1px solid #dbe2ea;
-  border-radius: 10px;
-  padding: 12px 15px;
-  font-size: 16px;
-  background: #f8fafc;
-  transition: 0.25s;
+  border: 1px solid var(--clr-border, #dbe2ea);
+  border-radius: 8px;
+  padding: clamp(9px, 2.6vw, 12px) clamp(10px, 3vw, 15px);
+  font-size: clamp(13px, 3.4vw, 15px);
+  background: var(--clr-bg-alt, #f8fafc);
+  box-shadow: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 .input:focus,
 .input2:focus {
   outline: none;
-  border-color: #2563eb;
+  border-color: var(--clr-accent, #4f46e5);
   background: white;
 }
 
 .plus-circle {
-  width: 42px;
-  height: 42px;
-  margin: 10px auto 0;
+  width: 38px;
+  height: 38px;
+  margin: 8px auto 0;
   border-radius: 50%;
-  background: #2563eb;
+  background: var(--clr-accent, #4f46e5);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: 24px;
   cursor: pointer;
-  transition: 0.3s;
+  box-shadow: none;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .plus-circle:hover {
-  transform: rotate(90deg) scale(1.08);
-  background: #1d4ed8;
+  transform: rotate(90deg);
+  background: var(--clr-accent-dark, #4338ca);
 }
 
 .match-settings {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: clamp(10px, 3vw, 20px);
   margin-top: 10px;
 }
 
 .overs-setting,
 .match-settings-lower {
-  flex: 1;
+  flex: 1 1 240px;
+  min-width: 0;
   background: white;
-  border-radius: 16px;
-  padding: 18px;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: clamp(12px, 3.5vw, 18px);
+  border: 1px solid var(--clr-border, #e2e8f0);
+  box-shadow: none;
 }
 
 .overs-setting {
@@ -129,53 +151,54 @@ body {
 }
 
 .match-settings label {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
-  color: #475569;
+  color: var(--clr-slate-600, #475569);
 }
 
 .overs-setting select {
-  height: 45px;
-  border: 1px solid #dbe2ea;
-  border-radius: 10px;
+  height: 42px;
+  border: 1px solid var(--clr-border, #dbe2ea);
+  border-radius: 8px;
   padding: 0 10px;
-  font-size: 16px;
-  background: #f8fafc;
+  font-size: 15px;
+  background: var(--clr-bg-alt, #f8fafc);
+  width: 100%;
 }
 
 #button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin: 35px auto 0;
-  width: 240px;
-  height: 52px;
+  gap: 8px;
+  margin: 28px auto 0;
+  width: min(220px, 100%);
+  height: 48px;
   border: none;
-  border-radius: 12px;
-  background: #2563eb;
+  border-radius: 10px;
+  background: var(--clr-accent, #4f46e5);
   color: white;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
+  box-shadow: none;
+  transition: background 0.2s ease;
 }
 
 #button:hover {
-  background: #1d4ed8;
-  transform: translateY(-2px);
+  background: var(--clr-accent-dark, #4338ca);
 }
 
 #button .arrow {
-  transition: 0.3s;
+  transition: transform 0.2s ease;
 }
 
 #button:hover .arrow {
-  transform: translateX(5px);
+  transform: translateX(4px);
 }
 
 .team-card::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 .team-card::-webkit-scrollbar-thumb {
@@ -183,18 +206,60 @@ body {
   border-radius: 10px;
 }
 
-@media (max-width: 850px) {
-  #team-card-holder,
+/* Cards stay side by side at every width — only spacing/typography scales down */
+@media (max-width: 640px) {
+  .teams-page {
+    width: 94%;
+  }
+
+  #team-card-holder {
+    gap: 8px;
+  }
+
+  .team-card-upper,
+  .team-card {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .team-card {
+    height: 240px;
+  }
+
+  .team-card h2,
+  .team-card-upper h2 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+  }
+
+  .input,
+  .input2 {
+    padding: 8px 9px;
+    font-size: 12.5px;
+    border-radius: 6px;
+  }
+
+  .plus-circle {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+
   .match-settings {
     flex-direction: column;
   }
+}
 
-  .team-card,
-  .team-card-upper {
-    width: 100%;
+@media (max-width: 380px) {
+  .team-card h2,
+  .team-card-upper h2 {
+    font-size: 12.5px;
   }
 
-  .teams-page h1 {
-    font-size: 30px;
+  .input,
+  .input2 {
+    font-size: 11.5px;
+    padding: 7px 8px;
   }
 }
