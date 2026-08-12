@@ -1,24 +1,36 @@
 #live_Score {
   display: flex;
   flex-direction: row-reverse;
-  gap: 10px;
+  gap: 8px;
   padding: 4px 2px;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+}
+
+#live_Score::-webkit-scrollbar {
+  height: 6px;
 }
 
 .each_score {
-  width: 70px;
-  height: 70px;
+  width: clamp(46px, 12vw, 70px);
+  height: clamp(46px, 12vw, 70px);
   min-width: 44px;
+  flex-shrink: 0;
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Roboto Mono", ui-monospace, monospace;
+  font-family: var(--font-mono, "Roboto Mono", ui-monospace, monospace);
   font-weight: 700;
-  font-size: 17px;
+  font-size: clamp(13px, 3.6vw, 17px);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
   transition: transform 0.15s ease;
+  scroll-snap-align: start;
+}
+
+.each_score:hover {
+  transform: translateY(-2px);
 }
 
 #main {
@@ -28,9 +40,11 @@
 
 .over-heading {
   font-weight: 800;
+  font-family: var(--font-display, inherit);
   justify-content: center;
   text-align: center;
-  padding: 20px 10px;
+  padding: clamp(12px, 4vw, 20px) 10px;
+  font-size: clamp(0.95rem, 3.4vw, 1.1rem);
 }
 
 .dotball {
