@@ -1,26 +1,31 @@
 .start_innings {
-  width: 500px;
+  width: min(500px, 92vw);
   margin: 40px auto;
   background: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  padding: clamp(20px, 5vw, 30px);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
 }
 
 .start_innings h2 {
   text-align: center;
   margin-bottom: 25px;
+  font-family: var(--font-display, inherit);
+  color: #0f172a;
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
 }
 
 .field {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .field label {
   margin-bottom: 8px;
   font-weight: 600;
+  color: #334155;
+  font-size: 14px;
 }
 
 .field select {
@@ -28,6 +33,14 @@
   border-radius: 8px;
   border: 1px solid #ddd;
   font-size: 15px;
+  background: #f8fafc;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.field select:focus {
+  outline: none;
+  border-color: #1e88e5;
+  background: #ffffff;
 }
 
 .start_innings button {
@@ -40,8 +53,28 @@
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
+  margin-top: 6px;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .start_innings button:hover {
   background: #1565c0;
+  transform: translateY(-1px);
+}
+
+.start_innings button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+@media (max-width: 480px) {
+  .start_innings {
+    margin: 20px auto;
+    padding: 18px;
+    border-radius: 12px;
+  }
+
+  .field select {
+    padding: 11px;
+    font-size: 14px;
+  }
 }
