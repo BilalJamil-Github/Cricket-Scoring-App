@@ -5,42 +5,69 @@
 }
 
 .intro {
-  background: linear-gradient(135deg, #0f172a, #1e3a8a);
-  height: 100vh;
-  color: #fff;
+  background: var(--clr-bg, #eef2f8);
+  min-height: 100vh;
+  color: var(--clr-ink, #0f172a);
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 24px;
+  font-family: var(--font-body, "Segoe UI", sans-serif);
 }
 
 .inner_intro {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(10px);
+  background: #ffffff;
+  border: 1px solid var(--clr-border, #e2e8f0);
   border-radius: 16px;
-  height: 30%;
-  width: 30%;
+  width: min(420px, 100%);
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 30px;
-  padding: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  gap: clamp(14px, 4vw, 26px);
+  padding: clamp(28px, 6vw, 44px) clamp(20px, 5vw, 34px);
+  box-shadow: none;
+}
+
+.inner_intro h1 {
+  font-family: var(--font-display, inherit);
+  font-weight: 600;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  letter-spacing: 0.2px;
+  color: var(--clr-ink, #0f172a);
+}
+
+.inner_intro p {
+  color: var(--clr-muted, #64748b);
+  font-size: clamp(0.9rem, 3vw, 1rem);
 }
 
 .inner_intro button {
-  width: 70%;
-  height: 45px;
-  font-size: 20px;
+  width: min(220px, 100%);
+  height: 46px;
+  font-size: 16px;
+  font-weight: 600;
   border: none;
-  border-radius: 8px;
-  background: #38bdf8;
+  border-radius: 10px;
+  background: var(--clr-accent, #4f46e5);
   color: white;
   cursor: pointer;
   align-self: center;
-  transition: 0.3s;
+  box-shadow: none;
+  transition: background 0.2s ease, transform 0.15s ease;
 }
 
 .inner_intro button:hover {
-  background: #0ea5e9;
+  background: var(--clr-accent-dark, #4338ca);
+}
+
+.inner_intro button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 480px) {
+  .inner_intro {
+    border-radius: 14px;
+    gap: 16px;
+  }
 }
